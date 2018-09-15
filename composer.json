@@ -1,0 +1,55 @@
+{
+    "name": "angelxmoreno/cakephp-simplecache-bridge",
+    "description": "A bridge to convert CakePHP Cache to SimpleCache (PSR16)",
+    "keywords":[
+        "CakePHP",
+        "CakePHP3",
+        "Cache",
+        "SimpleCache",
+        "PSR-16"
+    ],
+    "homepage": "https://github.com/angelxmoreno/cakephp-simplecache-bridge",
+    "support": {
+        "issues": "https://github.com/angelxmoreno/cakephp-simplecache-bridge/issues"
+    },
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Angel S. Moreno",
+            "email": "angelxmoreno@gmail.com"
+        }
+    ],
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-4": {
+            "Axm\\CakePHPSimpleCacheBridge\\": "src/"
+        }
+    },
+    "scripts": {
+        "tests": "kahlan --config=.kahlan.php",
+        "tests:integration": "kahlan --config=.kahlan.php --spec=./tests/Integration",
+        "tests:coverage": "kahlan --config=.kahlan.php --coverage=4",
+        "tests:clover": "kahlan --config=.kahlan.php --no-header --reporter=bar --clover=clover.xml",
+        "cs:check": "phpcs --standard=.phpcs.xml",
+        "cs:fix": "phpcbf -v --standard=.phpcs.xml",
+        "md:check": "phpmd . text .phpmd.xml --exclude /vendor/,/tmp/,/logs/ --suffixes php --colors"
+    },
+    "require": {
+        "php": "^5.6 || ^7",
+        "cakephp/cache": "^3.6",
+        "psr/simple-cache": "^1.0"
+    },
+    "require-dev": {
+        "cakephp/cakephp-codesniffer": "^3.0",
+        "codacy/coverage": "^1.4",
+        "codeclimate/php-test-reporter": "^0.4.4",
+        "kahlan/kahlan": "^4.1",
+        "phpmd/phpmd": "^2.6",
+        "squizlabs/php_codesniffer": "^3.3"
+    }
+}

@@ -17,8 +17,12 @@ the need of having to build 2 different sets of Cache management libraries.
 
 ## Isn't this already in CakePHP 3.7 ?
 
-No. CakePHP 3.7 brings with it a PSR-16 CacheEngine; meaning you will be able to decorate a PSR-16 object to implement 
-`Cake\Cache\CacheEngine` methods. What this bridge offers is the ability to go from a `Cake\Cache\CacheEngine` to PSR-16, not the other way around.
+~No. CakePHP 3.7 brings with it a PSR-16 CacheEngine; meaning you will be able to decorate a PSR-16 object to implement 
+`Cake\Cache\CacheEngine` methods. What this bridge offers is the ability to go from a `Cake\Cache\CacheEngine` to PSR-16, not the other way around.~
+
+*The new `SimpleCacheEngine` class ( in CakePHP 3.7 ) implements PSR 16 interface and decorates/wraps `CacheEngine` classes.*
+
+Thanks [Admad](https://github.com/ADmad) for the clarification.
 
 ## Examples
 

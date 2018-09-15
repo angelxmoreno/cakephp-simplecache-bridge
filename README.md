@@ -17,8 +17,8 @@ the need of having to build 2 different sets of Cache management libraries.
 
 ## Isn't this already in CakePHP 3.7 ?
 
-No. CakePHP 3.7 brings with it a PSR-16 CacheEngine; meaning will be able to decorate a PSR-16 object to implement 
-`Cake\Cache\CacheEngine` methods. This bridge is to go from `Cake\Cache\CacheEngine` to PSR-16, not the other way around.
+No. CakePHP 3.7 brings with it a PSR-16 CacheEngine; meaning you will be able to decorate a PSR-16 object to implement 
+`Cake\Cache\CacheEngine` methods. What this bridge offers is the ability to go from a `Cake\Cache\CacheEngine` to PSR-16, not the other way around.
 
 ## Examples
 
@@ -32,13 +32,18 @@ Cache::config('short', [
 
 $cache = new Bridge('short');
 
+//setting cache data
 $cache->set('some_key', 'some value');
+
+//getting cache data with a default
 $value = $cache->get('some_key', 'some default');
+
+//overriding the Cache engine's TTL with an int
 $cache->set('some_key', 'some value', 300); //cached for 300 seconds instead of `+1 hours`
 
+//overriding the Cache engine's TTL with a `\DateTimeInterval` ( as per the SimpleCache Interface )
 $interval = new \DateTimeInterval('P1Y'); // an interval of 1 year
 $cache->set('some_key', 'some value', $interval); //cached for 1 year instead of `+1 hours`
-
 ```
 
 ## Requirements
